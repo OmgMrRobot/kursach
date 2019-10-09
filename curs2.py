@@ -63,13 +63,13 @@ def G1_G2_G2i(n):
 		g1 = OneItaration()
 		g2 = OneItaration2()
 
-	g2i =G2i(g1[1], g2[1])
+	# g2i =G2i(g1[1], g2[1])
 	
-	return g1[1], g2[1], g2i
+	return g1[1], g2[1], #g2i
 
 
 
-print(G1_G2_G2i(n)[2])
+# print(G1_G2_G2i(n)[2])
 
 
 
