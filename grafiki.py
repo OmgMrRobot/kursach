@@ -2,78 +2,106 @@ from numpy import array, arange, absolute
 from numpy.fft import rfft, rfftfreq, fft
 from math import sin, pi
 import matplotlib.pyplot as plt
-from numpy.random import uniform
-
+import numpy as np
 from curs2 import Gold
-
-n = 1023  # число элементов
-
-fs = 1.023*pow(10,6)
-
-fL1 = 1575.42 * pow(10,6) # Несущая частота GPS в герцах
-
-# FD = fL1 * int(input('Введите множитель частоты дискритизации FD = fL1*...'))
-
-FD = 4 * (fL1+fs) 
-
-Tmax = 1023*1/FD
 
 
 def adapter(sequence): # Меняет 0 на -1
 	for i in range(len(sequence)):
 		if sequence[i]==0:
 			sequence[i]=-1
+		# else:
+		# 	sequence[i]=0
 	return sequence
+
+n = 1023
+f = 15.7542 
+fd = 1023
+t = np.arange(0, 99, 1/fd)
+j = pow(-1, 0.5)
+T = 0.001 # длительнось последовательности 1мс
+
+
+N = round((T/n)*2*f)
+
+
+
+x = np.sin(2*pi*t*f)
+
+
+plt.subplot(5,1,1)
+plt.plot(t,x)
+plt.axis([0,0.4, -1,1])
+
 
 
 sequence = Gold()  # получаем нашу м-последовательность 
 sequence = adapter(sequence)  # меняем 0 на -1
+sequence2 = []
 
-
-def sig(Tmax, FD):
-#не работает 
-	return [sin(2.*pi*fL1*t) for t in arange( 0,  Tmax, 1/FD)] # создаем сигнал
-
-
-def modulir_sig():
-	return [sig(Tmax,FD)[i]*sequence[i] for i in  range(n)] # Модулируем сигнал нашей м-последовательностью
-
-
-# вычисляем преобразование Фурье. Сигнал действительный, поэтому надо использовать rfft
-spectrum = rfft(modulir_sig())
-smax  = absolute(max(spectrum))
+sequence3 =[]
 
 
 
-def plotTime(n, FD, modulir_sig):
-	# нарисуем всё это, используя matplotlib
-	# Сначала сигнал зашумлённый и тон отдельно
-	plt.plot(arange(n)/float(FD), modulir_sig()) # по оси времени секунды!
-	plt.xlabel(u'Время, c') # это всё запускалось в Python 2.7, поэтому юникодовские строки
-	plt.ylabel(u'Напряжение, мВ')
-	plt.title(u'Сигнал во временной области')
-	plt.grid(True)
-	plt.show()
-	# когда закроется этот график, откроется следующий
 
 
 
-def plotSpectrum(n , FD, spectrum, smax):
-	# Потом спектр
-	plt.plot(rfftfreq(n, 1./FD), absolute(spectrum)/smax)
+for i in sequence:
+	for j in range(99):
+		sequence2.append(i)
 
-	plt.axis([fL1-pow(10,8) , fL1+pow(10,8), 0, 1]) # пределы по осям xmin xmax yman ymax
 
-	# rfftfreq сделает всю работу по преобразованию номеров элементов массива в герцы
-	# нас интересует только спектр амплитуд, поэтому используем abs из numpy (действует на массивы поэлементно)
-	# делим на число элементов, чтобы амплитуды были в милливольтах, а не в суммах Фурье. Проверить просто — постоянные составляющие должны совпадать в сгенерированном сигнале и в спектре
-	plt.xlabel(u'Частота, ГГц')
-	plt.ylabel(u'Напряжение, мВ')
-	plt.title(u'Спектр сигнала')
-	plt.grid(True)
-	plt.show()
+plt.subplot(5,1,2)
+plt.plot(t,sequence2)
 
 
 
-plotTime(n,FD,modulir_sig)
-plotSpectrum(n, FD,spectrum, smax)
+y = [sequence2[i]*x[i] for i in range(len(sequence2)) ]
+
+
+
+
+plt.subplot(5,1,2)
+plt.plot(t,y)
+plt.axis([0, 0.4, -1.5, 1.5 ])
+
+
+
+# # вычисляем преобразование Фурье. Сигнал действительный, поэтому надо использовать rfft
+
+
+
+# fr = (fd/2)*np.linspace(0,3,n/2)
+
+X = fft(y)
+
+fr = np.linspace(0,512,len(x)/2)
+
+X_m = absolute(X[0:np.size(fr/2)])
+
+
+plt.subplot(5,1,3)
+plt.plot(fr, X_m/max(X_m))
+plt.axis([0, 30, 0, 1])
+
+
+
+X_md = 10*np.log10(X_m)
+
+l = np.ones(30)
+g = range(30)
+
+
+
+plt.subplot(5,1,4)
+plt.plot(g, l-0.13 , c = 'red')
+plt.ylabel('0.87')
+plt.axis([0, 30, 0, 1])
+
+
+
+
+plt.subplot(5,1,4)
+plt.plot(fr, X_md/max(X_md))
+plt.axis([0, 30, 0, 1])
+plt.show()
