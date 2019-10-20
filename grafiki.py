@@ -1,9 +1,9 @@
 from numpy import array, arange, absolute 
 from numpy.fft import rfft, rfftfreq, fft
-from math import sin, pi
+from math import pi
 import matplotlib.pyplot as plt
 import numpy as np
-from curs2 import Gold
+from GOLD_2 import Gold
 
 # s(t) = A*Gнс(t)*Gдк(t)*cos(w*t+fi)
 
