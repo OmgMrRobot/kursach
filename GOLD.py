@@ -93,3 +93,4 @@ def Gold( lst = []): # Выводит код голда
 
 	return lst
 
+print(Gold())
