@@ -2,6 +2,7 @@ from numpy import array, arange, absolute
 from numpy.fft import rfft, rfftfreq, fft
 from math import pi
 import matplotlib.pyplot as plt
+import mplcursors
 import numpy as np
 from GOLD_2 import Gold
 
@@ -71,7 +72,7 @@ fr = np.linspace(pow(10,4),fs,len(sig)) # создаем массив часто
 
 Fourier_m = absolute(Fourier) #вычисляем действительный значения /  sqrt((a)^2+(ib)^2)  
 
-Fourier_db = 10*np.log10(Fourier_m) 
+Fourier_db = 20*np.log10(Fourier_m) # по мощности 
 
 
 
@@ -102,24 +103,28 @@ plt.axis([0, 0.000005, -1.2, 1.2])
 
 # нормированный спектр
 plt.subplot(4,1,3)
-plt.plot(fr, Fourier_m/max(Fourier_m))
+plt.plot(fr, Fourier_m / max(Fourier_m))
 plt.title('Нормированный спектр  ')
 plt.xlabel('Частота в Гц')
 plt.ylabel('')
 plt.axis([3*pow(10,6), 7*pow(10,6), 0, 1])
 
+# fig, ax =  plt.subplots(4,1,4)
+
 # нормированный спектр в dB
 plt.subplot(4,1,4)
-plt.plot(fr, Fourier_db/max(Fourier_db))
+plt.plot(fr, Fourier_db - max(Fourier_db))
 plt.title('Нормированный спектр в dB ')
 plt.xlabel('Частота в Гц')
 plt.ylabel('')
-plt.axis([3*pow(10,6), 7*pow(10,6), 0, 1])
+plt.axis([3*pow(10,6), 7*pow(10,6), -50, 0])
 
 # красная линия по уровню 13,6 дБ
 plt.subplot(4,1,4)
-plt.plot(range(3*pow(10,6), 7*pow(10,6)), np.ones(len(range(3*pow(10,6), 7*pow(10,6))))-0.136 , c='red')
-plt.axis([3*pow(10,6), 7*pow(10,6), 0, 1])
+plt.plot(range(3*pow(10,6), 7*pow(10,6)), -np.ones(len(range(3*pow(10,6), 7*pow(10,6))))-12.6 , c='red') # очень криво
+plt.axis([3*pow(10,6), 7*pow(10,6), -50, 0])
+
+# mplcursors.cursor(spectr)
 
 plt.show()
 
