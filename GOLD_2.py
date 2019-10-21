@@ -82,3 +82,5 @@ def Gold( lst = []): # Выводит код голда
 		lst.append(mod)
 
 	return lst
+
+# print(Gold())
