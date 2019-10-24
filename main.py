@@ -110,7 +110,7 @@ ax2.axis([0, 0.000005, -1.2, 1.2])
 ax3.plot(fr, Fourier_m / max(Fourier_m))
 ax3.set_title('Нормированный спектр  ')
 ax3.set_xlabel('Частота в Гц')
-ax3.set_ylabel('')
+ax3.set_ylabel('Амплитуда')
 ax3.axis([3*pow(10,6), 7*pow(10,6), 0, 1])
 
 
@@ -119,8 +119,9 @@ ax3.axis([3*pow(10,6), 7*pow(10,6), 0, 1])
 spectr = ax4.plot(fr, Fourier_db - max(Fourier_db))
 ax4.set_title('Нормированный спектр в dB ')
 ax4.set_xlabel('Частота в Гц')
-ax4.set_ylabel('')
+ax4.set_ylabel('Мощность в dB')
 ax4.axis([3*pow(10,6), 7*pow(10,6), -50, 0])
+
 
 mplcursors.cursor(spectr)
 

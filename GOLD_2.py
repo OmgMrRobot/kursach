@@ -43,12 +43,8 @@ def OneItaration2(equal, x = [1,1,1,1,1,1,1,1,1,1], lst = []): # х-базово
 
 
 
-
-
-
-
 def G1_G2_G2i(n): 
-# функция выводит g1 , g2 , g2i
+	# функция выводит g1 , g2 , g2i
 
 	equal = input('Введите номер НКА....')
 
@@ -63,9 +59,7 @@ def G1_G2_G2i(n):
 
 
 
-
-
-def Gold( lst = []): # Выводит код голда
+def Gold(lst = []): # Выводит код голда
 
 	g = G1_G2_G2i(n)
 
@@ -83,4 +77,6 @@ def Gold( lst = []): # Выводит код голда
 
 	return lst
 
-# print(Gold())
+
+if __name__ =='__main__':
+	print(Gold())
