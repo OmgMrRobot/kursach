@@ -134,3 +134,6 @@ mplcursors.cursor(line)
 
 plt.show()
 
+
+
+if __name__=="__main__":
