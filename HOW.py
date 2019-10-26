@@ -111,5 +111,5 @@ def Index(indexs, lst = []): # получаем проверочные элем�
 	return word2 + lst # соединяем 24 бита с 6 проверочными битами
 
 a = Index(indexs)
-print(a)
-print(len(a))
+# print(a)
+# print(len(a))
