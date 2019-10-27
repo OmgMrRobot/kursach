@@ -16,15 +16,18 @@ word = counter + Alert_Flag +Anti_Spoof_Flag + sub_frame_id # Соединяю �
 word = list(it.chain(word)) # разаединяю по элемента
 
 
-def intager(word2 = []):
-	for i in word:
-		word2.append(int(i))
-	return(word2)# преобразую строки в инт 
+D29 , D30 = [1,0] # Значение последних двух бит предыдущего слова
 
+
+
+def intager():
+	return  [int(i) for i in word]# преобразую строки в инт 
+
+def multiply_D30(sequency): # Перемножаем по модулю2 каждый элемент на последний бит предыдущего слова
+	return [i^D30 for i in sequency]
 
 word = intager()
 
-D29 , D30 = [1,0] # Значение последних двух бит предыдущего слова
 
 
 
@@ -107,9 +110,15 @@ def Index(indexs, lst = []): # получаем проверочные элем�
 
 		lst.append(sum_mod2)
 
+	word2 = multiply_D30(word2)
 
 	return word2 + lst # соединяем 24 бита с 6 проверочными битами
 
-a = Index(indexs)
+
+
+if __name__== '__main__':
+	print(Index(indexs))
+
+
 # print(a)
 # print(len(a))

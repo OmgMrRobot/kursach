@@ -7,7 +7,6 @@ tlm_message = list(it.repeat(0,16)) # Заполняем сообщение 0 с
 
 # pdb.set_trace()
 
-word = preamble+tlm_message # Соединяю списки
 
 
 
@@ -22,7 +21,13 @@ indexs = {	25 : [1,2,3,5,6,10,11,12,13,14,17,18,20,23],  # Индексы элм
 
 
 
-def Index(indexs, word, D29, D30, lst = []): # получаем проверочные элементы последовательности. с 25 по 30
+def multiply_D30(sequency): # Перемножаем по модулю2 каждый элемент на последний бит предыдущего слова
+	return [i^D30 for i in sequency]
+
+
+
+
+def Index(indexs, word, D29, D30, lst = []): # получаем проверочные элементы слова. с 25 по 30
 	
 	
 	for k,v in indexs.items():
@@ -45,9 +50,21 @@ def Index(indexs, word, D29, D30, lst = []): # получаем провероч
 
 	return lst 
 
-# lst = Index(indexs, word , d)
 
-# tml_word = word+lst # соединяем 24 бита с 6 проверочными битами
+def TML_Word(preamble, tlm_message):
+
+	word = preamble+tlm_message # Соединяю списки
+
+	word24 = multiply_D30(word)
+	lst = Index(indexs, word, D29 , D30 ) # 6 проверочных бит
+	return  word24+lst # соединяем 24 бита с 6 проверочными битами
+
+
+
+
+if __name__=='__main__':
+	print(TML_Word(preamble, tlm_message))
+
 
 
 # print(tml_word)
