@@ -57,83 +57,98 @@ def Sequence(sequence, Code, sequence2 = []): # дублирует значен�
 	return sequence2
 
 
+def sequence_main(): # Создаем нашу последовательность
+	
+	sequence = Gold()  # получаем нашу м-последовательность 
+	sequence = adapter(sequence)  # меняем 0 на -1
+	return sequence
 
-sequence = Gold()  # получаем нашу м-последовательность 
-sequence = adapter(sequence)  # меняем 0 на -1
+def Main():
+	sequence = sequence_main()
+	Code = CodePhaseVect(tt, Fdk) # Ищем сколько элементов синуса умнажаются на элемент м-последовательности
+	modulsig = ModulatedSig(sig, sequence, Code) # Модулирует сигнал м-последовательностью
+	sig_sequence  = Sequence(sequence, Code)  # дублирует значения м-последовательности
+	return  modulsig, sig_sequence
 
-Code = CodePhaseVect(tt, Fdk) # Ищем сколько элементов синуса умнажаются на элемент м-последовательности
-modulsig = ModulatedSig(sig, sequence, Code) # Модулирует сигнал м-последовательностью
-sig_sequence  = Sequence(sequence, Code)  # дублирует значения м-последовательности
+def fourier():
 
+	modulsig, sig_sequence = Main() 
 
-Fourier = fft(modulsig) #вычисляем преобразование Фурье.
+	Fourier = fft(modulsig) #вычисляем преобразование Фурье.
 
-fr = np.linspace(pow(10,4),fs,len(sig)) # создаем массив частот 
+	fr = np.linspace(pow(10,4),fs,len(sig)) # создаем массив частот 
 
-Fourier_m = absolute(Fourier) #вычисляем действительный значения /  sqrt((a)^2+(ib)^2)  
+	Fourier_m = absolute(Fourier) #вычисляем действительный значения /  sqrt((a)^2+(ib)^2)  
 
-Fourier_db = 20*np.log10(Fourier_m) # по мощности 
+	Fourier_db = 20*np.log10(Fourier_m) # по мощности 
 
-
-
-# Построение графиков
-
-fig, (ax1, ax2, ax3, ax4) = plt.subplots(nrows = 4, ncols = 1, figsize= (12,8), dpi = 100)
-plt.subplots_adjust(hspace =0.7 , top = 0.95)
-
-# Чистый сигнал 
-
-ax1.plot(tt, sig)
-ax1.set_title('Чистый сигнал ')
-ax1.set_xlabel('Время в секундах')
-ax1.set_ylabel('Значения сигнала')
-ax1.axis([0, 0.000005, -1, 1])
+	return modulsig, sig_sequence, fr, Fourier_m, Fourier_db
 
 
-# последовательность
+def Grafs():
+	
 
-ax2.plot(tt,sig_sequence)
-ax2.axis([0, 0.000005, -1.2, 1.2])
+	modulsig, sig_sequence, fr, Fourier_m, Fourier_db = fourier()
 
+	# Построение графиков
 
-# модулированный сигнал 
+	fig, (ax1, ax2, ax3, ax4) = plt.subplots(nrows = 4, ncols = 1, figsize= (12,8), dpi = 100)
+	plt.subplots_adjust(hspace =0.7 , top = 0.95)
 
-ax2.plot(tt,modulsig)
-ax2.set_title('Модулированный сигнал  ')
-ax2.set_xlabel('Время в секундах')
-ax2.set_ylabel('Значения сигнала')
-ax2.axis([0, 0.000005, -1.2, 1.2])
+	# Чистый сигнал 
 
-
-# нормированный спектр
-
-ax3.plot(fr, Fourier_m / max(Fourier_m))
-ax3.set_title('Нормированный спектр  ')
-ax3.set_xlabel('Частота в Гц')
-ax3.set_ylabel('Амплитуда')
-ax3.axis([3*pow(10,6), 7*pow(10,6), 0, 1])
+	ax1.plot(tt, sig)
+	ax1.set_title('Чистый сигнал ')
+	ax1.set_xlabel('Время в секундах')
+	ax1.set_ylabel('Значения сигнала')
+	ax1.axis([0, 0.000005, -1, 1])
 
 
-# нормированный спектр в dB
+	# последовательность
 
-spectr = ax4.plot(fr, Fourier_db - max(Fourier_db))
-ax4.set_title('Нормированный спектр в dB ')
-ax4.set_xlabel('Частота в Гц')
-ax4.set_ylabel('Мощность в dB')
-ax4.axis([3*pow(10,6), 7*pow(10,6), -50, 0])
+	ax2.plot(tt,sig_sequence)
+	ax2.axis([0, 0.000005, -1.2, 1.2])
 
 
-mplcursors.cursor(spectr)
+	# модулированный сигнал 
 
-# красная линия по уровню 13,6 дБ
+	ax2.plot(tt,modulsig)
+	ax2.set_title('Модулированный сигнал  ')
+	ax2.set_xlabel('Время в секундах')
+	ax2.set_ylabel('Значения сигнала')
+	ax2.axis([0, 0.000005, -1.2, 1.2])
 
-line = ax4.plot(range(3*pow(10,6), 7*pow(10,6)), -np.ones(len(range(3*pow(10,6), 7*pow(10,6))))-12.6 , c='red') # очень криво
-ax4.axis([3*pow(10,6), 7*pow(10,6), -50, 0])
 
-mplcursors.cursor(line)
+	# нормированный спектр
 
-plt.show()
+	ax3.plot(fr, Fourier_m / max(Fourier_m))
+	ax3.set_title('Нормированный спектр  ')
+	ax3.set_xlabel('Частота в Гц')
+	ax3.set_ylabel('Амплитуда')
+	ax3.axis([3*pow(10,6), 7*pow(10,6), 0, 1])
+
+
+	# нормированный спектр в dB
+
+	spectr = ax4.plot(fr, Fourier_db - max(Fourier_db))
+	ax4.set_title('Нормированный спектр в dB ')
+	ax4.set_xlabel('Частота в Гц')
+	ax4.set_ylabel('Мощность в dB')
+	ax4.axis([3*pow(10,6), 7*pow(10,6), -50, 0])
+
+
+	mplcursors.cursor(spectr)
+
+	# красная линия по уровню 13,6 дБ
+
+	line = ax4.plot(range(3*pow(10,6), 7*pow(10,6)), -np.ones(len(range(3*pow(10,6), 7*pow(10,6))))-12.6 , c='red') # очень криво
+	ax4.axis([3*pow(10,6), 7*pow(10,6), -50, 0])
+
+	mplcursors.cursor(line)
+
+	plt.show()
 
 
 
 if __name__=="__main__":
+	Grafs()
