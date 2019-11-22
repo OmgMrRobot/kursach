@@ -6,311 +6,243 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1290</width>
-    <height>814</height>
+    <width>817</width>
+    <height>469</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background: blue;
-</string>
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QGridLayout" name="gridLayout_3">
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+background-color: white;
+font: 13pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QLabel{
+margin:2px;
+}
+
+QDateEdit{
+height: 20px;
+}
+
+QLineEdit{
+height: 20px;
+}
+
+QPushButton{
+background-color: white;
+width: 75 px;
+height: 30px;
+margin:7px
+
+}
+
+QPushButton:hover{
+background-color: silver;
+}
+
+QPushButton:pressed{
+background-color: grey;
+}
+</string>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
-     <widget class="QTabWidget" name="tabWidget">
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;PRN - номер псевдопоследовательности&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;аппарата GPS &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLabel" name="label_13">
       <property name="styleSheet">
-       <string notr="true">background: white;
-font-size: 22px;</string>
+       <string notr="true">margin-left: 10px</string>
       </property>
-      <property name="currentIndex">
-       <number>2</number>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;A- большая полуось (км.)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
-      <widget class="QWidget" name="tab">
-       <property name="styleSheet">
-        <string notr="true">background: white;
-font-size: 22px;</string>
-       </property>
-       <attribute name="title">
-        <string>Tab 1</string>
-       </attribute>
-       <layout class="QGridLayout" name="gridLayout">
-        <item row="0" column="0">
-         <widget class="QDateTimeEdit" name="dateTimeEdit"/>
-        </item>
-        <item row="0" column="1">
-         <widget class="QLabel" name="label_2">
-          <property name="text">
-           <string>Дата: DD.MM.YEAR</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QSpinBox" name="spinBox"/>
-        </item>
-        <item row="1" column="1">
-         <widget class="QLabel" name="label_5">
-          <property name="text">
-           <string>TextLabel</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="0">
-         <widget class="QLineEdit" name="lineEdit_9"/>
-        </item>
-        <item row="2" column="1">
-         <widget class="QLabel" name="label">
-          <property name="text">
-           <string>TextLabel</string>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="0">
-         <widget class="QLineEdit" name="lineEdit_8"/>
-        </item>
-        <item row="3" column="1">
-         <widget class="QLabel" name="label_4">
-          <property name="text">
-           <string>TextLabel</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="0">
-         <widget class="QLineEdit" name="lineEdit">
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="1">
-         <widget class="QLabel" name="label_3">
-          <property name="text">
-           <string>TextLabel</string>
-          </property>
-         </widget>
-        </item>
-        <item row="5" column="0">
-         <widget class="QLineEdit" name="lineEdit_4"/>
-        </item>
-        <item row="5" column="1">
-         <widget class="QLabel" name="label_6">
-          <property name="text">
-           <string>TextLabel</string>
-          </property>
-         </widget>
-        </item>
-        <item row="6" column="0">
-         <widget class="QLineEdit" name="lineEdit_3"/>
-        </item>
-        <item row="6" column="1">
-         <widget class="QLabel" name="label_7">
-          <property name="text">
-           <string>TextLabel</string>
-          </property>
-         </widget>
-        </item>
-        <item row="7" column="0">
-         <widget class="QLineEdit" name="lineEdit_2"/>
-        </item>
-        <item row="7" column="1">
-         <widget class="QLabel" name="label_8">
-          <property name="text">
-           <string>TextLabel</string>
-          </property>
-         </widget>
-        </item>
-        <item row="8" column="0">
-         <widget class="QLineEdit" name="lineEdit_14"/>
-        </item>
-        <item row="8" column="1">
-         <widget class="QLabel" name="label_9">
-          <property name="text">
-           <string>TextLabel</string>
-          </property>
-         </widget>
-        </item>
-        <item row="9" column="0">
-         <widget class="QLineEdit" name="lineEdit_13"/>
-        </item>
-        <item row="9" column="1">
-         <widget class="QLabel" name="label_10">
-          <property name="text">
-           <string>TextLabel</string>
-          </property>
-         </widget>
-        </item>
-        <item row="10" column="0">
-         <widget class="QLineEdit" name="lineEdit_5"/>
-        </item>
-        <item row="10" column="1">
-         <widget class="QLabel" name="label_11">
-          <property name="text">
-           <string>TextLabel</string>
-          </property>
-         </widget>
-        </item>
-        <item row="11" column="0">
-         <widget class="QLineEdit" name="lineEdit_12"/>
-        </item>
-        <item row="11" column="1">
-         <widget class="QLabel" name="label_12">
-          <property name="text">
-           <string>TextLabel</string>
-          </property>
-         </widget>
-        </item>
-        <item row="12" column="0">
-         <widget class="QLineEdit" name="lineEdit_10"/>
-        </item>
-        <item row="12" column="1">
-         <widget class="QLabel" name="label_13">
-          <property name="text">
-           <string>TextLabel</string>
-          </property>
-         </widget>
-        </item>
-        <item row="13" column="0">
-         <widget class="QLineEdit" name="lineEdit_6"/>
-        </item>
-        <item row="13" column="1">
-         <widget class="QLabel" name="label_14">
-          <property name="text">
-           <string>TextLabel</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="tab_3">
-       <attribute name="title">
-        <string>tab_2</string>
-       </attribute>
-       <layout class="QGridLayout" name="gridLayout_4">
-        <item row="2" column="0" rowspan="2">
-         <widget class="QPlainTextEdit" name="plainTextEdit_3"/>
-        </item>
-        <item row="1" column="0">
-         <widget class="QPushButton" name="pushButton">
-          <property name="text">
-           <string>Значения НКА</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="0">
-         <widget class="QLabel" name="label_15">
-          <property name="text">
-           <string>TextLabel</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="0">
-         <widget class="QLabel" name="label_17">
-          <property name="text">
-           <string>TextLabel</string>
-          </property>
-         </widget>
-        </item>
-        <item row="6" column="0">
-         <widget class="QPlainTextEdit" name="plainTextEdit"/>
-        </item>
-        <item row="3" column="1">
-         <widget class="QPlainTextEdit" name="plainTextEdit_4"/>
-        </item>
-        <item row="7" column="0">
-         <widget class="QPushButton" name="pushButton_3">
-          <property name="text">
-           <string>TLM</string>
-          </property>
-         </widget>
-        </item>
-        <item row="6" column="1">
-         <widget class="QPlainTextEdit" name="plainTextEdit_2"/>
-        </item>
-        <item row="7" column="1">
-         <widget class="QPushButton" name="pushButton_4">
-          <property name="text">
-           <string>HOW</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="1">
-         <widget class="QLabel" name="label_16">
-          <property name="text">
-           <string>TextLabel</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QLabel" name="label_18">
-          <property name="text">
-           <string>TextLabel</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="1">
-         <widget class="QPushButton" name="pushButton_5">
-          <property name="text">
-           <string>ГОЛД</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="tab_2">
-       <property name="styleSheet">
-        <string notr="true">background: white;
-font-size: 22px;</string>
-       </property>
-       <attribute name="title">
-        <string>Tab 2</string>
-       </attribute>
-       <layout class="QGridLayout" name="gridLayout_2">
-        <item row="4" column="0" colspan="2">
-         <widget class="QLabel" name="label_21">
-          <property name="text">
-           <string>TextLabel</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QLabel" name="label_20">
-          <property name="text">
-           <string>TextLabel</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="0">
-         <widget class="QPushButton" name="pushButton_7">
-          <property name="text">
-           <string>Correlation_Sig</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="1">
-         <widget class="QPushButton" name="pushButton_6">
-          <property name="text">
-           <string>Correlation_GOLD</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="0">
-         <widget class="QLabel" name="label_19">
-          <property name="text">
-           <string>TextLabel</string>
-          </property>
-         </widget>
-        </item>
-        <item row="5" column="0" colspan="2">
-         <widget class="QPushButton" name="pushButton_2">
-          <property name="text">
-           <string>Main</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QSpinBox" name="spinBox">
+      <property name="minimum">
+       <number>1</number>
+      </property>
+      <property name="maximum">
+       <number>32</number>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="lineEdit_3">
+      <property name="text">
+       <string>26559,60403</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="label_3">
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Date - базовая дата (UTC)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLabel" name="label_12">
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;LΩ  - долгота восходящего узла (град. ) на 00ч.00мин.00сек. базовой даты&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QDateEdit" name="dateEdit"/>
+    </item>
+    <item row="3" column="1">
+     <widget class="QLineEdit" name="lineEdit_4">
+      <property name="text">
+       <string>2,79561</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLabel" name="label_6">
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;t - время от базовой даты (сек.)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QLabel" name="label_11">
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;ω - аргумент перигея (град.)(град)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <widget class="QLineEdit" name="lineEdit">
+      <property name="text">
+       <string>61440</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="1">
+     <widget class="QLineEdit" name="lineEdit_5">
+      <property name="text">
+       <string>43,69997</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="0">
+     <widget class="QLabel" name="label_7">
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;e - эксцентриситет&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="1">
+     <widget class="QLabel" name="label_10">
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;m- средняя аномалия (град.)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="0">
+     <widget class="QLineEdit" name="lineEdit_2">
+      <property name="text">
+       <string>0,00915</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="1">
+     <widget class="QLineEdit" name="lineEdit_6">
+      <property name="text">
+       <string>-10,06047</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="0">
+     <widget class="QLabel" name="label_4">
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; i - наклонение (град.)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="1">
+     <widget class="QLabel" name="label_9">
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;af0 - поправка к бортовым часам (сек.)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="0">
+     <widget class="QLineEdit" name="lineEdit_9">
+      <property name="text">
+       <string>56,04895</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="1">
+     <widget class="QLineEdit" name="lineEdit_7">
+      <property name="text">
+       <string>-2,07901E-4</string>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="0">
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;dΩ/dt - скорость изменения восходящего узла орбиты &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Ω(град./сек.)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="1">
+     <widget class="QLabel" name="label_8">
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;af1 - скорость изменения af0 (сек./сек.)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="11" column="0">
+     <widget class="QLineEdit" name="lineEdit_11">
+      <property name="text">
+       <string>-4,34156E-7</string>
+      </property>
+     </widget>
+    </item>
+    <item row="11" column="1">
+     <widget class="QLineEdit" name="lineEdit_8">
+      <property name="text">
+       <string>-1,09139E-11</string>
+      </property>
+     </widget>
+    </item>
+    <item row="12" column="0">
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="styleSheet">
+       <string notr="true">font: 16pt &quot;MS Shell Dlg 2&quot;;
+</string>
+      </property>
+      <property name="text">
+       <string>Корреляционные Функции</string>
+      </property>
+     </widget>
+    </item>
+    <item row="12" column="1">
+     <widget class="QPushButton" name="pushButton">
+      <property name="styleSheet">
+       <string notr="true">font: 16pt &quot;MS Shell Dlg 2&quot;;
+</string>
+      </property>
+      <property name="text">
+       <string>Cигнала</string>
+      </property>
      </widget>
     </item>
    </layout>
@@ -320,8 +252,8 @@ font-size: 22px;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1290</width>
-     <height>21</height>
+     <width>817</width>
+     <height>17</height>
     </rect>
    </property>
   </widget>

@@ -2,7 +2,7 @@ from PyQt5 import QtWidgets, QtCore
 from mydesign import Ui_MainWindow  # импорт нашего сгенерированного файла
 import sys
 from GRAFS import Grafs
-from GOLD_2 import Gold
+from Correlation import  Grafs_GOLD
 
  
 class mywindow(QtWidgets.QMainWindow):
@@ -22,33 +22,39 @@ app = QtWidgets.QApplication([])
 application = mywindow()
 application.show()
 
-#################################
+###################################################################################
 
-def ab():
+def button():
 	nka = application.ui.spinBox.value()
-	a = Gold(str(nka))
-	print(a)
-	# Grafs(str(nka))
-	 
+	data = application.ui.spinBox.value()
+	t = application.ui.lineEdit.text()
+	e = application.ui.lineEdit_2.text()
+	i = application.ui.lineEdit_9.text()
+	dqdt = application.ui.lineEdit_11.text()
+	A = application.ui.lineEdit_3.text()
+	L = application.ui.lineEdit_4.text()
+	w = application.ui.lineEdit_5.text()
+	m  = application.ui.lineEdit_6.text()
+	af0 = application.ui.lineEdit_7.text()
+	af1 = application.ui.lineEdit_8.text()
 
 
-# nka = application.ui.spinBox.value()
-# print(nka)
+	Grafs(str(nka))
+
+def button2():
+	nka = application.ui.spinBox.value()
+	Grafs_GOLD(str(nka))
+
+		
+
+application.ui.pushButton.clicked.connect(button)
+application.ui.pushButton_2.clicked.connect(button2)
 
 
-application.ui.pushButton_2.clicked.connect(ab)
 
 
-
-
-
-
-###############################################
+####################################################################################
 sys.exit(app.exec())
 
-
-# nka = application.ui.spinBox.value()
-
-# application.ui.pushButton.clicked.connect()
 
 

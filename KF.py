@@ -85,14 +85,6 @@ if __name__ =='__main__':
 	Graf(nka1, nka2)
 
 
-# 	while True:
-		
-# 		nka = input('Введите номер НКА....')
-# 		print("Для выхода введите q")
-# 		if nka == 'q':
-# 			break
-		
-# 		print(Gold(nka))
 
 
 

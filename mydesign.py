@@ -16,12 +16,10 @@ class Ui_MainWindow(object):
         MainWindow.resize(817, 469)
         MainWindow.setStyleSheet("")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
-        self.centralwidget.setStyleSheet("QWidget{\n" +
-"background-color: white;\n" +
-"font: 13pt \"MS Shell Dlg 2\";\n" +
-"\n"+
+        self.centralwidget.setStyleSheet("QWidget{\n"
+"background-color: white;\n"
+"font: 13pt \"MS Shell Dlg 2\";\n"
 "}\n"
-
 "\n"
 "QLabel{\n"
 "margin:2px;\n"
@@ -156,16 +154,25 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label_2.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt;\">PRN - номер псевдопоследовательности</span></p><p><span style=\" font-size:12pt;\">аппарата GPS </span></p></body></html>"))
         self.label_13.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt;\">A- большая полуось (км.)</span></p></body></html>"))
+        self.lineEdit_3.setText(_translate("MainWindow", "26559,60403"))
         self.label_3.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt;\">Date - базовая дата (UTC)</span></p></body></html>"))
         self.label_12.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt;\">LΩ  - долгота восходящего узла (град. ) на 00ч.00мин.00сек. базовой даты</span></p></body></html>"))
+        self.lineEdit_4.setText(_translate("MainWindow", "2,79561"))
         self.label_6.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt;\">t - время от базовой даты (сек.)</span></p></body></html>"))
         self.label_11.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt;\">ω - аргумент перигея (град.)(град)</span></p></body></html>"))
+        self.lineEdit.setText(_translate("MainWindow", "61440"))
+        self.lineEdit_5.setText(_translate("MainWindow", "43,69997"))
         self.label_7.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt;\">e - эксцентриситет</span></p></body></html>"))
         self.label_10.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt;\">m- средняя аномалия (град.)</span></p></body></html>"))
+        self.lineEdit_2.setText(_translate("MainWindow", "0,00915"))
+        self.lineEdit_6.setText(_translate("MainWindow", "-10,06047"))
         self.label_4.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt;\"> i - наклонение (град.)</span></p></body></html>"))
         self.label_9.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt;\">af0 - поправка к бортовым часам (сек.)</span></p></body></html>"))
+        self.lineEdit_9.setText(_translate("MainWindow", "56,04895"))
+        self.lineEdit_7.setText(_translate("MainWindow", "-2,07901E-4"))
         self.label.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt;\">dΩ/dt - скорость изменения восходящего узла орбиты </span></p><p><span style=\" font-size:12pt;\">Ω(град./сек.)</span></p></body></html>"))
         self.label_8.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt;\">af1 - скорость изменения af0 (сек./сек.)</span></p></body></html>"))
+        self.lineEdit_11.setText(_translate("MainWindow", "-4,34156E-7"))
+        self.lineEdit_8.setText(_translate("MainWindow", "-1,09139E-11"))
         self.pushButton_2.setText(_translate("MainWindow", "Корреляционные Функции"))
-        self.pushButton.setText(_translate("MainWindow", "Чистый сигнал, Модулированный сигнал,\n"
-"Спектр  модулированного сигнала"))
+        self.pushButton.setText(_translate("MainWindow", "Cигнала"))
