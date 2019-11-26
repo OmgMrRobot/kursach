@@ -174,5 +174,5 @@ class Ui_MainWindow(object):
         self.label_8.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt;\">af1 - скорость изменения af0 (сек./сек.)</span></p></body></html>"))
         self.lineEdit_11.setText(_translate("MainWindow", "-4,34156E-7"))
         self.lineEdit_8.setText(_translate("MainWindow", "-1,09139E-11"))
-        self.pushButton_2.setText(_translate("MainWindow", "Корреляционные Функции"))
-        self.pushButton.setText(_translate("MainWindow", "Cигнала"))
+        self.pushButton_2.setText(_translate("MainWindow", "Корреляционные функции"))
+        self.pushButton.setText(_translate("MainWindow", "Спектр сигнала"))
