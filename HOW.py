@@ -7,7 +7,7 @@ counter = 1
 Alert_Flag = '0'
 Anti_Spoof_Flag ='0'
 sub_frame_id = 1
-sub_frame_id = np.binary_repr(1,3)
+sub_frame_id = np.binary_repr(sub_frame_id,3)
 
 counter = np.binary_repr(counter,17)
 
@@ -17,7 +17,6 @@ word = list(it.chain(word)) # разаединяю по элемента
 
 
 D29 , D30 = [1,0] # Значение последних двух бит предыдущего слова
-
 
 
 def intager():

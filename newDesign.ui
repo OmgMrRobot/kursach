@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1129</width>
+    <height>1077</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">background-color: white;</string>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_3">
+    <item row="2" column="0" colspan="3">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Альманах&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: lightblue;</string>
+      </property>
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="widget">
+       <attribute name="title">
+        <string>Альманах</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <widget class="QLabel" name="Anomaly">
+          <property name="styleSheet">
+           <string notr="true">font-size: 24px;</string>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;m - средняя аномалия (mean anomaly)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLineEdit" name="anomaly">
+          <property name="styleSheet">
+           <string notr="true">background-color: white;
+height: 40px;
+font-size: 25px;
+</string>
+          </property>
+          <property name="text">
+           <string>3.029645</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="Toe">
+          <property name="styleSheet">
+           <string notr="true">font-size: 24px;</string>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;t - опорное время привязки эфемерид (reference time ephemeris)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLineEdit" name="toe">
+          <property name="styleSheet">
+           <string notr="true">background-color: white;
+height: 40px;
+font-size: 25px;
+</string>
+          </property>
+          <property name="text">
+           <string>405504000.000000</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="Eccentricity">
+          <property name="styleSheet">
+           <string notr="true">font-size: 24px;</string>
+          </property>
+          <property name="text">
+           <string>e - эксцентриситет (eccentricity)</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <widget class="QLineEdit" name="eccentricity">
+          <property name="styleSheet">
+           <string notr="true">background-color: white;
+height: 40px;
+font-size: 25px;
+</string>
+          </property>
+          <property name="text">
+           <string>0.009441</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="0">
+         <widget class="QLabel" name="Rate_of_right_ascen">
+          <property name="styleSheet">
+           <string notr="true">font-size: 24px;</string>
+          </property>
+          <property name="text">
+           <string>dΩ/dt скорость изменения восходящего узла орбиты (rate of  right ascen rad/s )</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="0">
+         <widget class="QLineEdit" name="rate_of_right_ascen">
+          <property name="styleSheet">
+           <string notr="true">background-color: white;
+height: 40px;
+font-size: 25px;
+</string>
+          </property>
+          <property name="text">
+           <string>7.874614e-12</string>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="0">
+         <widget class="QLabel" name="Semi_major">
+          <property name="styleSheet">
+           <string notr="true">font-size: 24px;</string>
+          </property>
+          <property name="text">
+           <string>A - главная полуось ( semi-major axis)</string>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="0">
+         <widget class="QLineEdit" name="semi_major">
+          <property name="styleSheet">
+           <string notr="true">background-color: white;
+height: 40px;
+font-size: 25px;
+</string>
+          </property>
+          <property name="text">
+           <string>5153.584</string>
+          </property>
+         </widget>
+        </item>
+        <item row="10" column="0">
+         <widget class="QLabel" name="Right_ascen_at_week">
+          <property name="styleSheet">
+           <string notr="true">font-size: 24px;</string>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ω&lt;span style=&quot; font-size:6pt;&quot;&gt;0 &lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt; - &lt;/span&gt;долгота восходящего узла орбитальной плоскости (right ascen at weel (rad))&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="11" column="0">
+         <widget class="QLineEdit" name="right_ascen_at_week">
+          <property name="styleSheet">
+           <string notr="true">background-color: white;
+height: 40px;
+font-size: 25px;
+</string>
+          </property>
+          <property name="text">
+           <string>-1.58222</string>
+          </property>
+         </widget>
+        </item>
+        <item row="12" column="0">
+         <widget class="QLabel" name="Orbital_iclinations">
+          <property name="styleSheet">
+           <string notr="true">font-size: 24px;</string>
+          </property>
+          <property name="text">
+           <string>i - угол наклонениiя (Orbital inclinations)</string>
+          </property>
+         </widget>
+        </item>
+        <item row="13" column="0">
+         <widget class="QLineEdit" name="orbital_iclinations">
+          <property name="styleSheet">
+           <string notr="true">background-color: white;
+height: 40px;
+font-size: 25px;
+</string>
+          </property>
+          <property name="text">
+           <string>0.978742</string>
+          </property>
+         </widget>
+        </item>
+        <item row="14" column="0">
+         <widget class="QLabel" name="Perigree">
+          <property name="styleSheet">
+           <string notr="true">font-size: 24px;</string>
+          </property>
+          <property name="text">
+           <string> ω - аргумент перигея (argument of perigee)</string>
+          </property>
+         </widget>
+        </item>
+        <item row="15" column="0">
+         <widget class="QLineEdit" name="perigree">
+          <property name="styleSheet">
+           <string notr="true">background-color: white;
+height: 40px;
+font-size: 25px;
+</string>
+          </property>
+          <property name="text">
+           <string>0.754676</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="widget">
+       <attribute name="title">
+        <string>Попровки</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="23" column="0">
+         <widget class="QLabel" name="Crs">
+          <property name="styleSheet">
+           <string notr="true">font-size: 24px;</string>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;C&lt;span style=&quot; font-size:10pt;&quot;&gt;rs -&lt;/span&gt; cинусная поправка радиуса орбиты&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="Af1">
+          <property name="styleSheet">
+           <string notr="true">font-size: 24px;</string>
+          </property>
+          <property name="text">
+           <string>Af1(s)</string>
+          </property>
+         </widget>
+        </item>
+        <item row="10" column="0">
+         <widget class="QLabel" name="Cis">
+          <property name="styleSheet">
+           <string notr="true">font-size: 24px;</string>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;C&lt;span style=&quot; font-size:10pt;&quot;&gt;is&lt;/span&gt; - синусная поправка к углу наклонения&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="12" column="0">
+         <widget class="QLabel" name="Cuc">
+          <property name="styleSheet">
+           <string notr="true">font-size: 24px;</string>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;C&lt;span style=&quot; font-size:10pt;&quot;&gt;uc &lt;/span&gt;- косинусная поправка аргумента долготы&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="14" column="0">
+         <widget class="QLabel" name="Cus">
+          <property name="styleSheet">
+           <string notr="true">font-size: 24px;</string>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;C&lt;span style=&quot; font-size:10pt;&quot;&gt;us&lt;/span&gt; - синусная поправка аргумента долготы&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="22" column="0">
+         <widget class="QLineEdit" name="crc">
+          <property name="styleSheet">
+           <string notr="true">background-color: white;
+height: 40px;
+font-size: 25px;
+</string>
+          </property>
+          <property name="text">
+           <string>228.250000</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLineEdit" name="af1">
+          <property name="styleSheet">
+           <string notr="true">background-color: white;
+height: 40px;
+font-size: 25px;
+</string>
+          </property>
+          <property name="text">
+           <string>-1.091394e-11</string>
+          </property>
+         </widget>
+        </item>
+        <item row="15" column="0">
+         <widget class="QLineEdit" name="cus">
+          <property name="styleSheet">
+           <string notr="true">background-color: white;
+height: 40px;
+font-size: 25px;
+</string>
+          </property>
+          <property name="text">
+           <string>8.463860e-06</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="Af0">
+          <property name="styleSheet">
+           <string notr="true">font-size: 24px;</string>
+          </property>
+          <property name="text">
+           <string>Af0(s)</string>
+          </property>
+         </widget>
+        </item>
+        <item row="24" column="0">
+         <widget class="QLineEdit" name="crs">
+          <property name="styleSheet">
+           <string notr="true">background-color: white;
+height: 40px;
+font-size: 25px;
+</string>
+          </property>
+          <property name="text">
+           <string>-49.781250</string>
+          </property>
+         </widget>
+        </item>
+        <item row="11" column="0">
+         <widget class="QLineEdit" name="cis">
+          <property name="styleSheet">
+           <string notr="true">background-color: white;
+height: 40px;
+font-size: 25px;
+</string>
+          </property>
+          <property name="text">
+           <string>3.352761e-08</string>
+          </property>
+         </widget>
+        </item>
+        <item row="21" column="0">
+         <widget class="QLabel" name="Crc">
+          <property name="styleSheet">
+           <string notr="true">font-size: 24px;</string>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;C&lt;span style=&quot; font-size:10pt;&quot;&gt;rc &lt;/span&gt;- косинусная поправка радиуса орбиты&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="13" column="0">
+         <widget class="QLineEdit" name="cuc">
+          <property name="styleSheet">
+           <string notr="true">background-color: white;
+height: 40px;
+font-size: 25px;
+</string>
+          </property>
+          <property name="text">
+           <string>-2.689660e-06</string>
+          </property>
+         </widget>
+        </item>
+        <item row="25" column="0">
+         <widget class="QLabel" name="Tgd">
+          <property name="styleSheet">
+           <string notr="true">font-size: 24px;</string>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;t&lt;span style=&quot; font-size:10pt;&quot;&gt;gd&lt;/span&gt; - оценка групповой дифференциальной задержки&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="0">
+         <widget class="QLineEdit" name="cic">
+          <property name="styleSheet">
+           <string notr="true">background-color: white;
+height: 40px;
+font-size: 25px;
+</string>
+          </property>
+          <property name="text">
+           <string>-1.713634e-07</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLineEdit" name="af0">
+          <property name="styleSheet">
+           <string notr="true">background-color: white;
+height: 40px;
+font-size: 25px;
+</string>
+          </property>
+          <property name="text">
+           <string>-3.089905e-01</string>
+          </property>
+         </widget>
+        </item>
+        <item row="28" column="0">
+         <widget class="QLineEdit" name="diff">
+          <property name="styleSheet">
+           <string notr="true">background-color: white;
+height: 40px;
+font-size: 25px;
+</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="26" column="0">
+         <widget class="QLineEdit" name="tgd">
+          <property name="styleSheet">
+           <string notr="true">background-color: white;
+height: 40px;
+font-size: 25px;
+</string>
+          </property>
+          <property name="text">
+           <string>-1.257285e-05</string>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="0">
+         <widget class="QLabel" name="Cic">
+          <property name="styleSheet">
+           <string notr="true">font-size: 24px;</string>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; C&lt;span style=&quot; font-size:10pt;&quot;&gt;ic&lt;/span&gt; - косинусная поправка к углу наклонения&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="27" column="0">
+         <widget class="QLabel" name="Diff">
+          <property name="styleSheet">
+           <string notr="true">font-size: 24px;</string>
+          </property>
+          <property name="text">
+           <string>отличие главного движения от расчетного</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item row="0" column="0" colspan="3">
+     <widget class="QLabel" name="PRN">
+      <property name="styleSheet">
+       <string notr="true">font-size: 30px;
+background-color: lightgreen;
+
+</string>
+      </property>
+      <property name="text">
+       <string>PRN - номер НКА</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="2">
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="styleSheet">
+       <string notr="true">height: 35px;
+font-size: 20px;
+</string>
+      </property>
+      <property name="text">
+       <string>Navigation Message</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0" colspan="3">
+     <widget class="QSpinBox" name="spinBox">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+        <horstretch>100</horstretch>
+        <verstretch>100</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="baseSize">
+       <size>
+        <width>100</width>
+        <height>100</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">height: 40px;
+font-size: 25px;
+</string>
+      </property>
+      <property name="minimum">
+       <number>1</number>
+      </property>
+      <property name="maximum">
+       <number>32</number>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="styleSheet">
+       <string notr="true">height: 35px;
+font-size: 20px;
+</string>
+      </property>
+      <property name="text">
+       <string>Spectrum</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QPushButton" name="pushButton">
+      <property name="styleSheet">
+       <string notr="true">height: 35px;
+font-size: 20px;
+</string>
+      </property>
+      <property name="text">
+       <string>AKF and VKF</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1129</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
