@@ -285,10 +285,10 @@ def Sub_frame_1():
 	Word_9()
 	Word_10()
 
-def Sub_frame_2():
+# def Sub_frame_2():
 
-	TLM_WORD()
-	HOW_WORD(sub_frame_id = 2)
+# 	TLM_WORD()
+# 	HOW_WORD(sub_frame_id = 2)
 	
 Sub_frame_1()
 print(Message)
