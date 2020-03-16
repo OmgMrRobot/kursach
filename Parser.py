@@ -42,30 +42,10 @@ class Class_Data():
 # 	{'Id': lst[g],
 # 	 'health' : lst[g + 1],
 # 	 'eccentricity' : lst[g + 2],
-# 	 'corr_to_inclination' : lst[g + 3],
-# 	 'rate_of_right_ascention' : lst[g + 4],
-# 	 'square_root_of_semi_major_axis' : lst[g + 5],
-# 	 'right_ascention_parameter' : lst[g + 6],
-# 	 'argument_of_perigee' : lst[g + 7],
-# 	 'mean_anomaly' : lst[g + 8],
-# 	 'Af0m' : lst[g + 9],
-# 	 'Af1' : lst[g + 10],
-# 	 'Af0l' : lst[g + 11],
-# 	 'week_almanac' : lst[g + 12],
 # 	 'time_of_week_almanac' : lst[g + 13] } ))
 # 	g += 13
 
 
-# print(Data)
-
-#d = Data[0]()
-
-
-# print(Data[0]())
-# print(d.Id)
-
-# d = Data[6]()
-# print(d.Id)
 
 
 

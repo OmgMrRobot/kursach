@@ -3,6 +3,8 @@ from ux import Ui_MainWindow  # импорт нашего сгенерирова
 import sys
 from GRAFS import Grafs
 from Correlation import  Grafs_GOLD
+from Move_to_bits_ephemeris import Move_to_Bits_Ephemeris as MBE
+import message213
 
  
 class mywindow(QtWidgets.QMainWindow):
@@ -15,7 +17,6 @@ class mywindow(QtWidgets.QMainWindow):
         self.ui.pushButton.setGeometry( QtCore.QRect(10, 10, 200, 200))
 
  
-
 
  
 app = QtWidgets.QApplication([])
@@ -77,8 +78,30 @@ def button3():
 	"af0" : af0, "af1" : af1, "Cic" : Cic, "Cis" : Cis, "Crc" : Crc, "Crs" : Crs,
 	"Cus" : Cus, "Cuc" : Cuc, "Tgd" : Tgd, "Diff" : Diff }
 
+
+
 	for k,v in almanah.items():
-		print(f"{k} = {v}\n")
+		almanah[k] = float(v)
+		print(f"{k} = {v}, {type(v)}\n")
+
+	try:
+		del message213.Message
+		message213.Message = [] 
+	except NameError:
+		pass
+	
+
+	print('\t moved \n ')
+	MBE(almanah)
+	message213.Main_Message(almanah)
+
+	with open('Message.txt', mode = 'w') as file:
+		for i in message213.Message:
+			file.write(str(i))
+
+	# for k,v in almanah.items():
+	# 	if not k == "PRN":
+	# 		print(f"{k} = {v}, {len(v)}\n")
 
 
 # 	print(f"PRN = {PRN}\n Toe = {Toe}\n eccentricity = {e}\n orbital_iclinations = {i}\n \
