@@ -1,10 +1,11 @@
 from PyQt5 import QtWidgets, QtCore
 from ux import Ui_MainWindow  # импорт нашего сгенерированного файла
 import sys
-from GRAFS import Grafs
-from Correlation import  Grafs_GOLD
+from GRAFS import CreateSpectrum
+from KF import Graf_VKF
 from Move_to_bits_ephemeris import Move_to_Bits_Ephemeris as MBE
 import message213
+from multiprocessing import Process
 
  
 class mywindow(QtWidgets.QMainWindow):
@@ -27,11 +28,14 @@ application.show()
 
 def button():
 	PRN = application.ui.spinBox.value()
-	Grafs(str(PRN))
+	graf = CreateSpectrum(str(PRN))
+	graf.grafs()
 
 def button2():
 	PRN = application.ui.spinBox.value()
-	Grafs_GOLD(str(PRN))
+	PRN2 = application.ui.spinBox_2.value()
+
+	Graf_VKF(str(PRN), str(PRN2))
 
 def button3():
 	PRN = application.ui.spinBox.value()
@@ -70,13 +74,11 @@ def button3():
 
 	Tgd = application.ui.tgd.text()
 
-	Diff = application.ui.diff.text()
-
 
 	almanah = {"PRN" : PRN, "Toe" : Toe, "e" : e, "i" : i, "dqdt" : dqdt, 
 	"A" : A, "right_ascen_at_week" : right_ascen_at_week, "w" : w, "m" : m, 
 	"af0" : af0, "af1" : af1, "Cic" : Cic, "Cis" : Cis, "Crc" : Crc, "Crs" : Crs,
-	"Cus" : Cus, "Cuc" : Cuc, "Tgd" : Tgd, "Diff" : Diff }
+	"Cus" : Cus, "Cuc" : Cuc, "Tgd" : Tgd}
 
 
 
@@ -90,12 +92,10 @@ def button3():
 	except NameError:
 		pass
 	
-
-	print('\t moved \n ')
 	MBE(almanah)
 	message213.Main_Message(almanah)
 
-	with open('Message.txt', mode = 'w') as file:
+	with open('New_Message.txt', mode = 'w') as file:
 		for i in message213.Message:
 			file.write(str(i))
 
@@ -108,8 +108,8 @@ def button3():
 # rate_of_right_ascen = {dqdt}\n A = {A}\n right_ascen_at_week = {right_ascen_at_week}\n \
 # w = {w}\n m = {m}")
 
-application.ui.pushButton.clicked.connect(button)
-application.ui.pushButton_2.clicked.connect(button2)
+application.ui.pushButton.clicked.connect(button2)
+application.ui.pushButton_2.clicked.connect(button)
 application.ui.pushButton_3.clicked.connect(button3)
 
 
